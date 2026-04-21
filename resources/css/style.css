@@ -44,10 +44,8 @@ html {
 body {
   font-size: 2.4rem;
   line-height: 1.1;
-  font-family: "adobe-caslon-pro", serif;
+  font-family: "adobe-caslon-pro", sans-serif;
 }
-
-/* Header */
 
 header {
   display: flex;
@@ -58,7 +56,7 @@ header {
   top: 0;
   left: 0;
   width: 100vw;
-  z-index: 20;
+  z-index: 2;
 }
 
 h1,
@@ -75,21 +73,6 @@ dt,
 dd {
   font-size: 2.7rem;
 }
-
-h1 a,
-h1 a:visited,
-a,
-a:visited {
-  color: #000000;
-}
-
-h1 a:hover,
-.about a:hover,
-.archive a:hover {
-  text-decoration: underline;
-}
-
-/* Type */
 
 ul {
   list-style: none;
@@ -126,8 +109,6 @@ h2 {
   text-align: center;
 }
 
-/* About panel */
-
 .about {
   display: none;
   width: 65vw;
@@ -141,13 +122,35 @@ h2 {
   overflow-y: auto;
 }
 
-.about.open {
-  display: block;
-  box-shadow: -11px -1px 20px -1px rgba(0, 0, 0, 0.25);
+.about a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.about a:visited {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #000000;
+}
+
+a:visited {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #000000;
+}
+
+a {
+  cursor: pointer;
+  color: #000000;
 }
 
 .about p {
   max-width: 85%;
+}
+
+.about.open {
+  display: block;
+  box-shadow: -11px -1px 20px -1px rgba(0, 0, 0, 0.25);
 }
 
 .about-close {
@@ -159,15 +162,16 @@ h2 {
 .about-trigger {
   position: absolute;
   left: 35.5vw;
-  top: 0.5em;
 }
 
 .about-trigger:hover,
 .about-close:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .about-close:hover {
+  text-decoration: none;
   color: #eee;
 }
 
@@ -178,20 +182,12 @@ h2 {
   max-width: 60%;
 }
 
-#reverse {
-  display: inline;
-}
-
-/* Main */
-
 main {
   display: flex;
   flex-direction: row;
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
 }
-
-/* Project image pages */
 
 .images {
   position: fixed;
@@ -199,55 +195,39 @@ main {
   top: 0;
   width: 50%;
   height: 100vh;
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
 }
 
-.images.left {
+.left {
   left: 0;
   padding: 2em;
   padding-left: 3em;
 }
 
-.images.right {
+.right {
   right: 0;
   padding: 2em;
 }
 
-.images figure {
-  max-width: 100%;
+.right figure {
+  max-width: 90%;
 }
 
-.images img {
+.right img {
   max-width: 100%;
-  max-height: calc(100vh - 4em);
   display: block;
-  width: auto;
-  height: auto;
 }
 
-figure:hover {
-  cursor: pointer;
+.left img {
+  max-width: 100%;
+  display: block;
 }
-
-figcaption {
-  font-size: 1.2rem;
-  padding: 0.5em 0;
-  text-align: left;
-}
-
-/* Hide project image when About is open */
 
 body.about-open main .images {
   display: none;
 }
-
-body.about-open {
-  overflow: hidden;
-}
-
-/* Archive text if used */
 
 .archive {
   font-size: 1.7rem;
@@ -258,14 +238,45 @@ body.about-open {
   color: #000000;
 }
 
-.archive a:visited {
+.archive a:hover {
+  cursor: pointer;
+  text-decoration: underline;
   color: #000000;
 }
 
-/* Generic media helpers */
+.archive a:visited {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #000000;
+}
+
+h1 a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #000000;
+}
+
+h1 a:visited {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #000000;
+}
+
+#reverse {
+  display: inline;
+}
+
+.hold {
+  margin-top: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: block;
+  vertical-align: middle;
+}
 
 img {
   border-style: none;
+  width: 100%;
 }
 
 table {
@@ -277,16 +288,11 @@ canvas:focus {
   outline: none;
 }
 
-/* Index page grid */
-
-.hold {
-  margin-top: 70px;
-  margin-left: 10px;
-  margin-right: 10px;
-  display: block;
-  vertical-align: middle;
+#cover-container {
+  cursor: pointer;
 }
 
+/* Containers */
 .mainContainer {
   position: relative;
   z-index: auto;
@@ -302,42 +308,28 @@ canvas:focus {
   width: 100%;
 }
 
-.coverContainer img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 .captionContainer {
   width: 100%;
   padding: 5px 0 0 0;
 }
 
-/* Tablet / small desktop */
-
-@media (max-width: 1100px) {
-  .thumbsContainer {
-    width: 200px;
-    margin: 0 14px 18px 0;
-  }
-
-  .coverContainer {
-    height: 280px;
-  }
+/* prevent background scroll when About is open */
+body.about-open {
+  overflow: hidden;
 }
 
+/* Tablet / small desktop */
 @media (max-width: 810px) {
   .about {
     width: 100vw;
     left: 0;
     -webkit-overflow-scrolling: touch;
-    padding-right: 0.5em;
   }
 
   .cv {
     margin-left: 0;
     max-width: 100%;
-    padding: 0 1rem 6rem 1rem;
+    padding: 0 1rem;
   }
 
   h1,
@@ -353,7 +345,6 @@ canvas:focus {
   .about-trigger {
     left: auto;
     right: 1rem;
-    top: 0.5em;
   }
 
   .images {
@@ -361,21 +352,6 @@ canvas:focus {
     width: 100%;
     height: auto;
     padding: 1em;
-    display: flex;
-  }
-
-  .images.left,
-  .images.right {
-    left: auto;
-    right: auto;
-    padding: 1em;
-  }
-
-  .images img {
-    max-width: 100%;
-    max-height: none;
-    width: auto;
-    height: auto;
   }
 
   ul {
@@ -385,31 +361,9 @@ canvas:focus {
   strong {
     text-indent: -6rem;
   }
-
-  .hold {
-  margin-top: 100px;
-  margin-left: 10px;
-  margin-right: 10px;
-  display: block;
-  vertical-align: middle;
 }
 
-  .thumbsContainer {
-    width: calc(50% - 10px);
-    margin: 0 10px 16px 0;
-  }
-
-  .thumbsContainer:nth-child(2n) {
-    margin-right: 0;
-  }
-
-  .coverContainer {
-    height: 240px;
-  }
-}
-
-/* Mobile */
-
+/* mobile styles */
 @media screen and (max-width: 568px) {
   * {
     box-sizing: border-box;
@@ -419,52 +373,13 @@ canvas:focus {
 
   .mainContainer {
     width: 100%;
-    padding-top: 10px;
-  }
-
-  .hold {
-    margin-top: 58px;
-    margin-left: 8px;
-    margin-right: 8px;
+    padding-top: 30px;
   }
 
   .thumbsContainer {
-    width: 100%;
-    float: none;
-    margin: 0 auto 18px auto;
-  }
-
-  .coverContainer {
-    height: auto;
-    min-height: 0;
-  }
-
-  .coverContainer img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-
-  .about {
-    padding-right: 0.5em;
-  }
-
-  .cv {
-    padding: 0 0.5rem 6rem 0.5rem;
-  }
-
-  li {
-    margin-left: 8.5rem;
-    text-indent: -3.8rem;
-  }
-
-  strong {
-    text-indent: -5.8rem;
-  }
-
-  .images,
-  .images.left,
-  .images.right {
-    padding: 0.75em;
+    width: inherit;
+    float: inherit;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
