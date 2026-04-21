@@ -64,3 +64,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// Load CV into all pages
+document.addEventListener("DOMContentLoaded", function () {
+  const cvContainer = document.getElementById("cv-container");
+
+  if (cvContainer) {
+    fetch("./resources/cv.html")
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Failed to load CV");
+        }
+        return response.text();
+      })
+      .then(html => {
+        cvContainer.innerHTML = html;
+      })
+      .catch(error => {
+        console.error("CV load error:", error);
+      });
+  }
+});
