@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Andrea Longacre-White</title>
+
+  <link rel="stylesheet" href="./resources/css/style.css" />
+  <link rel="shortcut icon" href="./resources/images/alw.ico" />
+
+  <script src="./resources/js/main.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1><a href="./index.html">Andrea Longacre-White</a></h1>
+    <span class="about-trigger">About</span>
+  </header>
+
+  <!-- ABOUT (unchanged) -->
+  <div class="about">
+    <span class="about-close">(&times;)</span>
+    <p>(b.1980) Radnor, PA. <br>Lives and works in Los Angeles, CA.</p>
+    <br>
+    <p><a id="contact" href="mailto:andrea.longacre.white@gmail.com">Contact</a>.</p>
+
+    <!-- keep your CV exactly as-is here -->
+    <div class="cv">
+      <!-- unchanged -->
+    </div>
+  </div>
+
+  <main>
+
+    <!-- SINGLE image stack (no mobile duplicate) -->
+    <div class="images">
+
+      <figure>
+        <img src="./resources/images/I_1.jpg"
+             alt="I, image 1"
+             fetchpriority="high"
+             decoding="async">
+      </figure>
+
+      <figure style="display:none;">
+        <img src="./resources/images/I_2.jpg"
+             alt="I, image 2"
+             loading="lazy"
+             decoding="async">
+      </figure>
+
+      <figure style="display:none;">
+        <img src="./resources/images/I_3.jpg"
+             alt="I, image 3"
+             loading="lazy"
+             decoding="async">
+      </figure>
+
+      <figure style="display:none;">
+        <img src="./resources/images/I_4.jpg"
+             alt="I, image 4"
+             loading="lazy"
+             decoding="async">
+      </figure>
+
+      <figure style="display:none;">
+        <img src="./resources/images/I_5.jpg"
+             alt="I, image 5"
+             loading="lazy"
+             decoding="async">
+      </figure>
+
+      <figure style="display:none;">
+        <img src="./resources/images/I_6.jpg"
+             alt="I, image 6"
+             loading="lazy"
+             decoding="async">
+      </figure>
+
+      <figure style="display:none;">
+        <img src="./resources/images/I_7.jpg"
+             alt="I, image 7"
+             loading="lazy"
+             decoding="async">
+      </figure>
+
+      <figure style="display:none;">
+        <img src="./resources/images/I_8.jpg"
+             alt="I, image 8"
+             loading="lazy"
+             decoding="async">
+      </figure>
+
+    </div>
+
+  </main>
+</body>
+</html>
